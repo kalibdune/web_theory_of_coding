@@ -1,0 +1,54 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theory-coding</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"/>
+</head>
+<body>
+    <header>
+        <div class="header_text">
+            <p>Пособие по теории кодирования информации</p>
+        </div>
+    </header>
+    <main>
+        <div class="main">
+            <div class="title">
+                Основные вопросы
+            </div>
+            <div class="question_one" class="pad">
+                <p>Цели проекта ?</p>
+                <p>Наш проект приследует цель: помочь школьникам разобраться в помехоустйочивом кодировании.</p>
+            </div>
+            
+            <div class="question_two">
+                <p>Какие виды кодов представлены в наших продуктах ?</p>
+                <p>На нашем сайте и десктопном приложении вы можете опопробовать такие коды как: код проверки на чётность, код Хэмминга.</p>
+            </div>
+            <div class="links">
+                демонстрация кодов онлайн
+            </div>
+            <div class="buttons">
+                <button class="custom-btn btn-5" style="margin:50px ;" onclick="window.location.href='#'"><span>Код проверка на чётность</span></button>
+                <button class="custom-btn btn-5" style="margin:50px ;" onclick="window.location.href='#'"><span>Код Хэмминга</span></button>
+            </div>
+            <p class="desk">Десктопное приложение</p>
+            <div class="app">
+                <div class="imagies">
+                    <img src="{% static 'parity.jpg' %}" alt="parity">
+                    <img src="{% static 'hamming.jpg' %}" alt="hamming">    
+                </div>
+            </div>
+            <div class="download">
+                <button class="custom-btn btn-5" style="margin:50px ;" onclick="window.location.href='#'"><span>скачать приложение</span></button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://github.com/kalibdune/web_theory_of_coding" target="_blank">github сайта</a>
+        <a href="https://github.com/kalibdune/theory_of_coding" target="_blank">github десктопного приложения</a>
+    </footer>
+</body>
+</html>
