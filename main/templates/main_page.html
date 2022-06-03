@@ -11,6 +11,11 @@
     <header>
         <div class="header_text">
             <p>Пособие по теории кодирования информации</p>
+            <div class="arrow_down">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
     <main>
@@ -50,5 +55,20 @@
         <a href="https://github.com/kalibdune/web_theory_of_coding" target="_blank">github сайта</a>
         <a href="https://github.com/kalibdune/theory_of_coding" target="_blank">github десктопного приложения</a>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', ()=>{
+            arrow_down = document.getElementsByClassName('arrow_down')
+            if (pageYOffset >= 100){
+                for(let x = 0; x < arrow_down.length; x++){
+                    arrow_down[x].style.visibility = "hidden"
+                }
+            } else {
+                for(let x = 0; x < arrow_down.length; x++){
+                    arrow_down[x].style.visibility = "visible"
+                }
+            }
+        })
+    </script>
 </body>
 </html>
