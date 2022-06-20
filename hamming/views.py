@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def hamming_page(request):
+    return render(request, 'hamming_page.html')

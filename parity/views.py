@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def parity_page(request):
+    return render(request, 'parity_page.html')
