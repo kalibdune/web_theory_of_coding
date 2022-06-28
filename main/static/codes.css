@@ -17,7 +17,7 @@ header{
     display: flex;
     font-size: 1.5em;
     align-content: stretch;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.85);
 }
 
 header a{
@@ -29,14 +29,14 @@ header a{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30vw;
+    width: 50vw;
 }
 
 .codes{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 70vw;
+    width: 50vw;
 }
 
 a{
@@ -50,6 +50,18 @@ a:hover{
 main{
     padding-top:150px;
     font-size: 1.25em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+}
+
+.wrap{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .theory{
     display: flex;
@@ -73,10 +85,14 @@ main{
     font-size: 2em;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 .text{
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 40px;
 }
 
 footer{
@@ -103,5 +119,23 @@ footer a:hover{
 @media(max-width: 768px){
     header{
         font-size: 1em;
+    }
+}
+
+@media(max-width: 425px){
+    header{
+        font-size: 0.8em;
+    }
+    .label{
+        font-size: 1.5em;
+    }
+    main{
+        width: 90vw;
+    }
+}
+
+@media(min-width:1440px){
+    main{
+        width: 60vw;
     }
 }
