@@ -15,8 +15,9 @@ header{
     width: 100vw;
     height: 80px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5em;
-    align-content: stretch;
     background-color: rgba(0,0,0,0.85);
 }
 
@@ -25,26 +26,17 @@ header a{
     justify-content: center;
 }
 
-.page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-}
-
-.codes{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 50vw;
-}
-
 a{
     text-decoration: none;
     color: white;
 }
 a:hover{
     text-decoration: underline;
+}
+
+.name{
+    color:white;
+    font-size: 2em;
 }
 
 main{
@@ -63,19 +55,7 @@ main{
     flex-direction: column;
     align-items: center;
 }
-.theory{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.generator{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.calculator{
+.paragraf{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -91,8 +71,9 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
     padding-bottom: 40px;
+    font-size: 1em;
 }
 
 footer{
