@@ -203,8 +203,9 @@ footer a:hover{
     transition:10s ease all;
 }
 
-.btn-5 span {
-    padding: 50px;
+.btn-5 {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .app{
     display: flex;
@@ -250,10 +251,16 @@ footer a:hover{
     }
 }
 
+@media (min-width: 1380px){
+    .btn-5{
+        padding: 15px;
+    }
+}
+
 @media(max-width:425px){
     .aim{
         font-size: 1.25em;
-        text-align: center;
+        text-align: left;
     }
     .title{
         font-size: 2em;
@@ -272,6 +279,12 @@ footer a:hover{
 @media(max-width:320px){
     .header_text{
         font-size: 1.8em;
+    }
+}
+
+@media(max-width:338px){
+    .btn-5 span {
+        font-size: 0.8em;
     }
 }
 
