@@ -9,21 +9,57 @@
     <link rel="stylesheet" type="text/css" href="{% static 'codes.css' %}">
 <body>
     <header>
+        <label for="check" >
+            <input type="checkbox" id="check" onclick="clickNav()"/> 
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         <div class="name">Проверка на чётность</div>
     </header>
-    <div class="wrap">
+    <nav id="navigation">
+        <div class="siteNav">
+            <a href="/">Главная страница &#10142;</a>
+            <a href="/hamming/">Код Хэмминга &#10142;</a>
+        </div>
+        <div class="contents">Оглавление</div>
+        <ul>
+            {% for paragraf in paragrafs %}
+            <li onclick="goToParagraf('{{ paragraf.position }}')"><a>{{ paragraf.paragraf_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <div id="wrap">
         <main>
             {% for paragraf in paragrafs %}
-            <div class="paragraf" style="padding-bottom: 50px;">
+            <div class="paragraf" style="padding-bottom: 50px;" id="{{ paragraf.position }}">
                 <div class="label">{{ paragraf.paragraf_name|safe }}</div>
                 <div class="text">{{ paragraf.paragraf_content|safe }}</div>
             </div>
             {% endfor %}
         </main>
     </div>
-    <footer>
+    <footer id="footer">
         <a href="https://github.com/kalibdune/web_theory_of_coding" target="_blank">github сайта</a>
         <a href="https://github.com/kalibdune/theory_of_coding" target="_blank">github десктопного приложения</a>
     </footer>
+    <script>
+        var nav_open = false
+        var nav = document.getElementById("navigation")
+        function clickNav(){
+           if (nav_open == false){
+                nav.id = 'openNav'
+                nav_open = true
+           } else {
+                nav.id = 'navigation'
+                nav_open = false
+           }
+        }
+
+        function goToParagraf(number){
+            let paragraf = document.getElementById(`${number}`)
+            paragraf.scrollIntoView({block: "center", behavior: "smooth"})
+        }
+    </script>
 </body>
 </html>
