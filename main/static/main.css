@@ -16,8 +16,8 @@ header{
     align-items: center;
     flex-direction: column;
     z-index: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: url("back.jpg") no-repeat fixed center;
 
 }
@@ -105,20 +105,10 @@ main{
     z-index: 2;
 }
 
-.question_one{
+.aim{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-
-    width: 80%;
-    font-size: 1.5em;
-
-}
-.question_two{
-    display: flex;
-    flex-direction: column;
-    padding-top: 100px;
+    padding-top: 50px;
 
 
     width: 80%;
@@ -161,6 +151,7 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 footer a{
@@ -192,29 +183,33 @@ footer a:hover{
 }
 .btn-5:before
 .btn-5:after{
-content:'';
-top:0;
-right:0;
-height:2px;
-width:0;
-background: #000;
-transition:600ms ease all;
+    content:'';
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #000;
+    transition:600ms ease all;
 }
 .btn-5:after{
-right:inherit;
-top:inherit;
-left:0;
-bottom:0;
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
 }
 .btn-5:hover:before,
 .btn-5:hover:after{
-width:100%;
-transition:10s ease all;
+    width:100%;
+    transition:10s ease all;
+}
+
+.btn-5 {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .app{
     display: flex;
     flex-direction: column;
-
 }
 
 .imagies{
@@ -234,11 +229,7 @@ transition:10s ease all;
 }
 
 @media (min-width: 1100px){
-    .question_one{
-        width: 60%;
-    }
-
-    .question_two{
+    .aim{
         width: 60%;
     }
     .title{
@@ -260,14 +251,16 @@ transition:10s ease all;
     }
 }
 
-@media(max-width:425px){
-    .question_one{
-        font-size: 1.25em;
-        text-align: center;
+@media (min-width: 1380px){
+    .btn-5{
+        padding: 15px;
     }
-    .question_two{
+}
+
+@media(max-width:425px){
+    .aim{
         font-size: 1.25em;
-        text-align: center;
+        text-align: left;
     }
     .title{
         font-size: 2em;
@@ -289,6 +282,12 @@ transition:10s ease all;
     }
 }
 
+@media(max-width:338px){
+    .btn-5 span {
+        font-size: 0.8em;
+    }
+}
+
 @media(min-width:2000px){
     header{
         background: url("back.jpg") repeat-x fixed center;
@@ -305,10 +304,7 @@ transition:10s ease all;
     .links{
         font-size: 4em;
     }
-    .question_one{
-        font-size: 2em;
-    }
-    .question_two{
+    .aim{
         font-size: 2em;
     }
     .buttons{

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +12,7 @@
     <header>
         <div class="header_text">
             <p>Пособие по теории кодирования информации</p>
-            <div class="arrow_down">
+            <div class="arrow_down" onclick="slide()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -19,27 +20,26 @@
         </div>
     </header>
     <main>
-        <div class="main">
+        <div class="main" id="main">
             <div class="title">
-                Основные вопросы
+                Цель проекта
             </div>
-            <div class="question_one" class="pad">
-                <p>Цели проекта ?</p>
-                <p>Наш проект приследует цель: помочь школьникам разобраться в помехоустйочивом кодировании.</p>
-            </div>
-            
-            <div class="question_two">
-                <p>Какие виды кодов представлены в наших продуктах ?</p>
-                <p>На нашем сайте и десктопном приложении вы можете опопробовать такие коды как: код проверки на чётность, код Хэмминга.</p>
+            <div class="aim">
+                Наш проект приследует цель: помочь школьникам разобраться в помехоустойчивом кодировании.<br/>
+                Мы предоставляем ученикам пособие по кодам: проверка на чётность, код Хэмминга и код Рида Соломона.<br/>Также нашей командой был разработан генератор задач для интелектуального мегаполиса в качестве отработки пройденного материала по коду Хэмминга.
             </div>
             <div class="links">
                 демонстрация кодов онлайн
             </div>
             <div class="buttons">
-                <button class="custom-btn btn-5" style="margin:50px ;" onclick="window.location.href='/parity'"><span>Код проверки на чётность</span></button>
-                <button class="custom-btn btn-5" style="margin:50px ;" onclick="window.location.href='/hamming'"><span>Код Хэмминга</span></button>
+                <button class="custom-btn btn-5" style="margin:50px;" onclick="window.location.href='/parity'"><span>Код проверки на чётность</span></button>
+                <button class="custom-btn btn-5" style="margin:50px;" onclick="window.location.href='/hamming'"><span>Код Хэмминга</span></button>
             </div>
             <p class="desk">Десктопное приложение</p>
+            <div class="aim">
+                В рамках школьного конкурса проектных работ, 2021-2022 годов, нашей командой было разработано open source десктопное приложение для наглядной демонстрации помехоустойчивых кодов.<br/>
+                приложение работает на платформах: Windows 7/10/11 и дистрибутивах linux.
+            </div>
             <div class="app">
                 <div class="imagies">
                     <img src="{% static 'parity.jpg' %}" alt="parity">
@@ -69,6 +69,10 @@
                 }
             }
         })
+        function slide(){
+            main = document.getElementById('main')
+            main.scrollIntoView(top, behavior="smooth")
+        }
     </script>
 </body>
 </html>

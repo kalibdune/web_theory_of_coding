@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from .models import Block_parity
 
 def parity_page(request):
-    return render(request, 'parity_page.html')
+    paragrafs = Block_parity.objects.all().order_by('position')
+    return render(request, 'parity_page.html', {
+        'paragrafs': paragrafs
+    })

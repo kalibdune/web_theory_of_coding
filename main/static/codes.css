@@ -11,12 +11,14 @@
 }
 
 header{
+    z-index: 1;
     position: fixed;
     width: 100vw;
-    height: 80px;
+    height: 10vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5em;
-    align-content: stretch;
     background-color: rgba(0,0,0,0.85);
 }
 
@@ -25,26 +27,131 @@ header a{
     justify-content: center;
 }
 
-.page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-}
-
-.codes{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 50vw;
-}
-
 a{
     text-decoration: none;
     color: white;
 }
 a:hover{
     text-decoration: underline;
+}
+
+#navigation{
+    z-index: 0;
+    position: fixed;
+    margin-top: 10vh;
+    height: 100vh;
+    display: none;
+    background-color: white;
+    box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+#openNav{
+    z-index: 0;
+    position: fixed;
+    margin-top: 10vh;
+    display: flex;
+    color: black;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+
+    background-color: white;
+    box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.5);
+
+    animation: openNavNorm 0.3s normal ease-out;
+}
+
+#openNav a{
+    font-size: 1.5em;
+    color: black;
+}
+
+label{
+    display:flex;
+    flex-direction:column;
+    width:70px;
+    cursor:pointer;
+    margin-right: 30px;
+   }
+   
+label span{
+    background: #fff;
+    border-radius:10px;
+    height:5px;
+    margin: 7px 0;
+    transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+
+span:nth-of-type(1){
+    width:50%;
+    
+}
+
+span:nth-of-type(2){
+    width:100%;
+}
+
+
+span:nth-of-type(3){
+    width:75%;
+
+}
+
+
+input[type="checkbox"]{
+    display:none;
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(1){
+    transform-origin:bottom;
+    transform:rotatez(45deg) translate(8px,0px)
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(2){
+    
+    transform-origin:top;
+    transform:rotatez(-45deg)
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(3){
+    
+    transform-origin:bottom;
+    width:50%;
+    transform: translate(30px,-11px) rotatez(45deg);
+
+}
+
+li{
+    padding-top: 10px;
+    font-size: 1.1em;
+    width: 100%;
+}
+
+li a:hover{
+    cursor: pointer;
+}
+
+.contents{
+    font-size: 1.8em;
+    padding-top: 40px;
+}
+
+.siteNav{
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.name{
+    color:white;
+    font-size: 2em;
 }
 
 main{
@@ -57,25 +164,14 @@ main{
     width: 80vw;
 }
 
-.wrap{
+#wrap{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
 }
-.theory{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.generator{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.calculator{
+.paragraf{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -91,8 +187,9 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
     padding-bottom: 40px;
+    font-size: 1em;
 }
 
 footer{
@@ -116,9 +213,56 @@ footer a:hover{
     text-decoration:underline;
 }
 
+@keyframes openNavNorm{
+    from{
+        width: 0%;
+    }
+
+    to{
+        width: 30%;
+    }
+}
+
+@keyframes openNav768{
+    from{
+        width: 0%;
+    }
+
+    to{
+        width: 50%;
+    }
+}
+
+@keyframes openNav425{
+    from{
+        width: 0%;
+    }
+
+    to{
+        width: 60%;
+    }
+}
+
+@media(max-width: 1100px){
+    .contents{
+        font-size: 1.5em;
+    }
+    #openNav a {
+        font-size: 1.15em;
+    }
+    .siteNav{
+        font-size: 1.2em;
+    }
+}
+
 @media(max-width: 768px){
     header{
         font-size: 1em;
+    }
+
+    #openNav {
+        width: 50%;
+        animation: openNav768 0.3s normal ease-out;
     }
 }
 
@@ -132,6 +276,26 @@ footer a:hover{
     main{
         width: 90vw;
     }
+    label{
+        width: 50px;
+    }
+    input[type="checkbox"]:checked ~ span:nth-of-type(3){
+    
+        transform-origin:bottom;
+        width:60%;
+        transform: translate(20px,-15px) rotatez(45deg);
+    
+    }
+
+    #openNav{
+        width: 60%;
+        animation: openNav425 0.3s normal ease-out;
+    }
+
+    label{
+        margin-right: 20px;
+    }
+
 }
 
 @media(min-width:1440px){
