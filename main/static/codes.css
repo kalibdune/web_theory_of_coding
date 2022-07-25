@@ -187,7 +187,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: left;
+    text-align: justify;
     padding-bottom: 40px;
     font-size: 1em;
 }

@@ -114,10 +114,11 @@ main{
     width: 80%;
     font-size: 1.5em;
     justify-content: center;
+    text-align: justify;
 }
 .title{
     display: flex;
-    padding-top: 100px;
+    padding-top: 50px;
     justify-content: center;
     align-items: center;
 

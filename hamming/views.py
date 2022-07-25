@@ -6,3 +6,6 @@ def hamming_page(request):
     return render(request, 'hamming_page.html', {
         'paragrafs': paragrafs
     })
+
+def tasks_page(request):
+    return render(request, 'tasks_hamming.html')

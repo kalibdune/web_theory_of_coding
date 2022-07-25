@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Код Хэмминга</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'codes.css' %}">
+    <title>Document</title>
+</head>
 <body>
     <header>
         <label for="check" >
@@ -15,28 +16,29 @@
             <span></span>
             <span></span>
         </label>
-        <div class="name">Код хэмминга</div>
+        <div class="name">генератор задач</div>
     </header>
     <nav id="navigation">
         <div class="siteNav">
             <a href="/">Главная страница &#10142;</a>
             <a href="/parity/">Проверка на чётность &#10142;</a>
+            <a href="/hamming/">Код Хэмминга &#10142</a>
         </div>
         <div class="contents">Оглавление</div>
+        <!--
         <ul>
             {% for paragraf in paragrafs %}
             <li onclick="goToParagraf('{{ paragraf.position }}')"><a>{{ paragraf.paragraf_name }}</a></li>
             {% endfor %}
         </ul>
+        -->
     </nav>
     <div id="wrap">
         <main>
-            {% for paragraf in paragrafs %}
-            <div class="paragraf" style="padding-bottom: 50px;" id="{{ paragraf.position }}">
-                <div class="label">{{ paragraf.paragraf_name|safe }}</div>
-                <div class="text">{{ paragraf.paragraf_content|safe }}</div>
+            <div class="paragraf" style="padding-bottom: 50px;">
+                <div class="label">Lorem ipsum dolor sit amet.</div>
+                <div class="text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque expedita, libero illum asperiores ut enim voluptate. Minima nemo eos voluptates. </div>
             </div>
-            {% endfor %}
         </main>
     </div>
     <footer id="footer">
