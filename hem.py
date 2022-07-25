@@ -1,5 +1,3 @@
-
-from random import random
 import random
 
 def hamming(code):
@@ -87,24 +85,10 @@ def decod_hamming(code):
     else:
         return (code, sum)
 
-#num=random.randint(0, 255)
-#print(num)
-#print(bin(num))
-#print (hamming("101"))
-#resul=list(bin(num))
-#print(resul)
-#del resul[0], resul[0]
-#print(resul)
-#print (hamming(resul))
-
-#random.seed=
 ran=random.randint(3,5)
 les=[]
 for i in range(0, ran):
     les.append(random.randint(0,1))
-
-print(les)
-print (hamming(les))
 
 counte=3
 abc=['a','b','c','d','e','g',]
@@ -124,7 +108,6 @@ for n in range(0, counte):
     print(les)
     for n in range(0, len(les)):
         ret.append(les[n])
-print(ret)
 ret2=ret[0]
 for n in range(1, len(ret)):
     ret2=ret2[:n]+ret[n]
