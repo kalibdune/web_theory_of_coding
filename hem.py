@@ -89,71 +89,77 @@ def decod_hamming(code):
     else:
         return (code, sum)
 
-true=True
 
-while true:
-    ran=random.randint(3,5)
-    les=[]
-    for i in range(0, ran):
-        les.append(random.randint(0,1))
+def foo(d):
+    true=True 
 
-    counte=3
-    abc=['a','b','c','d','e','g',]
-    abc2="a,b,c,d,e,g"
-    ret=[]
-    les=[]
-    ran=random.randint(3,5)
-    randlol=random.randint(1,2)
-    for n in range(0, counte):
+    while true:
+        ran=random.randint(3,5)
         les=[]
         for i in range(0, ran):
             les.append(random.randint(0,1))
-       
-        for i in range(randlol):
-            les=hamming(les)
-            les = les[:-1]
-        les=list(les)
-        les.append(" ")
-        #del les[-2]
-        les.insert(0, abc[n])
-        les.insert(1, ':')
-        print(les)
-        for n in range(0, len(les)):
-            ret.append(les[n])
-    ret2=ret[0]
-    text="Задание 13 [короткий ответ]. По каналу связи с помощью равномерного двоичного корректирующего кода Хэмминга передаются сообщения, содержащие только 4 буквы: . Кодовые слова для всех четырёх букв известны:. Сколько ошибок может исправить такой код?"
-    for n in range(1, len(ret)):
-        ret2=ret2[:n]+ret[n]
-    print(ret2)
-    text=text[:156] + abc2[:5] +text[156:204] +ret2 +text[204:]
-    print(text)
 
-    diff=5
-    arr=[]
-    arr2=[]
-    #sequenc=1
-    for sequenc in range(1, counte):
-        for i in range((sequenc-1)*len(les), (sequenc)*len(les)-3):
-            arr.append(ret2[i+2])
+        counte=3
+        abc=['a','b','c','d','e','g',]
+        abc2="a,b,c,d,e,g"
+        ret=[]
+        les=[]
+        #ran=random.randint(3,5)
+        ran=d
+        randlol=random.randint(1,2)
+        for n in range(0, counte):
+            les=[]
+            for i in range(0, ran):
+                les.append(random.randint(0,1))
+        
+            for i in range(randlol):
+                les=hamming(les)
+                les = les[:-1]
+            les=list(les)
+            les.append(" ")
+            #del les[-2]
+            les.insert(0, abc[n])
+            les.insert(1, ':')
+            print(les)
+            for n in range(0, len(les)):
+                ret.append(les[n])
+        ret2=ret[0]
+        text="Задание 13 [короткий ответ]. По каналу связи с помощью равномерного двоичного корректирующего кода Хэмминга передаются сообщения, содержащие только 4 буквы: . Кодовые слова для всех четырёх букв известны:. Сколько ошибок может исправить такой код?"
+        for n in range(1, len(ret)):
+            ret2=ret2[:n]+ret[n]
+        print(ret2)
+        text=text[:156] + abc2[:5] +text[156:204] +ret2 +text[204:]
+        print(text)
 
-        for i in range((sequenc),counte):
-            g=0
-            for j in range(len(les)*i, len(les)*i-3+len(les)):
-                arr2.append(ret2[j+2])
-            #print(arr2)
-            for j in range(0,len(les)-3):
-                if arr[j]!=arr2[j]:
-                    g=g+1
-            arr2=[]
-            #print(g)
-            if g<diff:
-                diff=g
-            #print(diff)
+        diff=5
         arr=[]
+        arr2=[]
+        #sequenc=1
+        for sequenc in range(1, counte):
+            for i in range((sequenc-1)*len(les), (sequenc)*len(les)-3):
+                arr.append(ret2[i+2])
 
-    #print(arr)
-    print(diff)
-    if diff !=0 and diff !=4:
-        true=False
+            for i in range((sequenc),counte):
+                g=0
+                for j in range(len(les)*i, len(les)*i-3+len(les)):
+                    arr2.append(ret2[j+2])
+                #print(arr2)
+                for j in range(0,len(les)-3):
+                    if arr[j]!=arr2[j]:
+                        g=g+1
+                arr2=[]
+                #print(g)
+                if g<diff:
+                    diff=g
+                #print(diff)
+            arr=[]
+
+        #print(arr)
+        print(diff, randlol)
+        if diff !=0 and diff !=4:
+            true=False
+        return diff, text
+
+foo(5)
 
 
