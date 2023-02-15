@@ -1,5 +1,3 @@
-
-from msilib import sequence
 import random
 
 
@@ -90,7 +88,7 @@ def decod_hamming(code):
         return (code, sum)
 
 
-def foo(d):
+def generate_task(d):
     true=True 
 
     while true:
@@ -120,16 +118,13 @@ def foo(d):
             #del les[-2]
             les.insert(0, abc[n])
             les.insert(1, ':')
-            print(les)
             for n in range(0, len(les)):
                 ret.append(les[n])
         ret2=ret[0]
-        text="Задание 13 [короткий ответ]. По каналу связи с помощью равномерного двоичного корректирующего кода Хэмминга передаются сообщения, содержащие только 4 буквы: . Кодовые слова для всех четырёх букв известны:. Сколько ошибок может исправить такой код?"
+        text="Задание 13 [короткий ответ]. По каналу связи с помощью равномерного двоичного корректирующего кода Хэмминга передаются сообщения, содержащие только 3 буквы: . Кодовые слова для всех четырёх букв известны:. Сколько ошибок может исправить такой код?"
         for n in range(1, len(ret)):
             ret2=ret2[:n]+ret[n]
-        print(ret2)
         text=text[:156] + abc2[:5] +text[156:204] +ret2 +text[204:]
-        print(text)
 
         diff=5
         arr=[]
@@ -143,23 +138,17 @@ def foo(d):
                 g=0
                 for j in range(len(les)*i, len(les)*i-3+len(les)):
                     arr2.append(ret2[j+2])
-                #print(arr2)
                 for j in range(0,len(les)-3):
                     if arr[j]!=arr2[j]:
                         g=g+1
                 arr2=[]
-                #print(g)
                 if g<diff:
                     diff=g
-                #print(diff)
             arr=[]
 
-        #print(arr)
-        print(diff, randlol)
         if diff !=0 and diff !=4:
             true=False
-        return diff, text
+        return diff, text.replace('Задание 13 [короткий ответ].', '').strip()
 
-foo(5)
 
 

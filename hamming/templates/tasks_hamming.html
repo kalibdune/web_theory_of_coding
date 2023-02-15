@@ -25,19 +25,55 @@
             <a href="/hamming/">Код Хэмминга &#10142</a>
         </div>
         <div class="contents">Оглавление</div>
-        <!--
         <ul>
-            {% for paragraf in paragrafs %}
-            <li onclick="goToParagraf('{{ paragraf.position }}')"><a>{{ paragraf.paragraf_name }}</a></li>
-            {% endfor %}
+            <li onclick="goToParagraf('base')">
+                <a>Задачи базового уровня</a>
+            </li>
+            <li onclick="goToParagraf('norm')">
+                <a>Задачи среднего уровня</a>
+            </li>
+            <li onclick="goToParagraf('high')">
+                <a>Задачи повышенного уровня</a>
+            </li>
         </ul>
-        -->
     </nav>
     <div id="wrap">
         <main>
-            <div class="paragraf" style="padding-bottom: 50px;">
-                <div class="label">Lorem ipsum dolor sit amet.</div>
-                <div class="text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque expedita, libero illum asperiores ut enim voluptate. Minima nemo eos voluptates. </div>
+            <div class="paragraf" style="padding-bottom: 50px;" id="base">
+                <div class="label">Задачи базового уровня</div>
+                {% for task2 in tasks2 %}
+
+                <div class="task">
+                    <div class="text">{{ task2.text }}</div>
+                    <p><a onclick="changeVisibility('{{ task2.id }}')" style="color: black">показать ответ</a></p>
+                    <div class="answer" id="{{ task2.id }}" style="visibility: hidden;">ответ: {{ task2.answer }}</div>
+                </div>
+
+                {% endfor %}
+            </div>
+            <div class="paragraf" style="padding-bottom: 50px;" id="norm">
+                <div class="label">Задачи среднего уровня</div>
+                {% for task3 in tasks3 %}
+
+                <div class="task">
+                    <div class="text">{{ task3.text }}</div>
+                    <p><a onclick="changeVisibility('{{ task3.id }}')" style="color: black">показать ответ</a></p>
+                    <div class="answer" id="{{ task3.id }}" style="visibility: hidden;">ответ: {{ task3.answer }}</div>
+                </div>
+
+                {% endfor %}
+            </div>
+            <div class="paragraf" style="padding-bottom: 50px;" id="high">
+                <div class="label">Задачи повышенного уровня</div>
+                {% for task5 in tasks5 %}
+
+                <div class="task">
+                    <div class="text">{{ task5.text }}</div>
+                    <p><a onclick="changeVisibility('{{ task5.id }}')" style="color: black">показать ответ</a></p>
+                    <div class="answer" id="{{ task5.id }}" style="visibility: hidden;">ответ: {{ task5.answer }}</div>
+                </div>
+
+                {% endfor %}
             </div>
         </main>
     </div>
@@ -48,6 +84,7 @@
     <script>
         var nav_open = false
         var nav = document.getElementById("navigation")
+        var state = false
         function clickNav(){
            if (nav_open == false){
                 nav.id = 'openNav'
@@ -61,6 +98,15 @@
         function goToParagraf(number){
             let paragraf = document.getElementById(`${number}`)
             paragraf.scrollIntoView({block: "center", behavior: "smooth"})
+        }
+        function changeVisibility(pos){
+            let elem = document.getElementById(`${pos}`)
+            
+            if(elem.style.visibility == 'visible'){
+                elem.style.visibility = 'hidden'
+            } else {
+                elem.style.visibility = 'visible'
+            }
         }
     </script>
 </body>
