@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: gunicorn web_theory_of_coding.wsgi:application --bind 0.0.0.0:80
+    ports:
+      - 80:80
+    
