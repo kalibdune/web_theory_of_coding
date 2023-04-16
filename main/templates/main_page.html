@@ -28,9 +28,17 @@
                 Наш проект приследует цель: помочь школьникам разобраться в помехоустойчивом кодировании.<br/>
                 Мы предоставляем ученикам пособие по кодам: проверка на чётность, код Хэмминга и код Рида Соломона.<br/>Также нашей командой был разработан калькулятор кодов провери на чётность и кода Хэмминга в виде десктопного приложения.
             </div>
-            <dev class="title">
+            <div class="links">
+                Пособие по кодам
+            </div>
+            <div class="buttons">
+                <button class="custom-btn btn-5" style="margin:50px;" onclick="window.location.href='/parity'"><span>Код проверки на чётность</span></button>
+                <button class="custom-btn btn-5" style="margin:50px;" onclick="window.location.href='/hamming'"><span>Код Хэмминга</span></button>
+                <button class="custom-btn btn-5" style="margin:50px;" onclick="window.location.href='/reed_solomon'"><span>Код Рида Соломона</span></button>
+            </div>
+            <div class="title">
                 МЭШ
-            </dev>
+            </div>
             <div class="aim">
                 <div class="image_mes">
                     <img src="{% static 'MES.webp' %}" class="mes">
@@ -42,13 +50,7 @@
                     <button class="custom-btn btn-5" style="margin:50px; width: 200px;"><span>МЭШ</span></button>
                 </a>
             </div>
-            <div class="links">
-                Пособие по кодам
-            </div>
-            <div class="buttons">
-                <button class="custom-btn btn-5" style="margin:50px;" onclick="window.location.href='/parity'"><span>Код проверки на чётность</span></button>
-                <button class="custom-btn btn-5" style="margin:50px;" onclick="window.location.href='/hamming'"><span>Код Хэмминга</span></button>
-            </div>
+            
             <p class="desk">Десктопное приложение</p>
             <div class="aim">
                 В рамках школьного конкурса проектных работ, 2021-2022 годов, нашей командой было разработано open source десктопное приложение для наглядной демонстрации помехоустойчивых кодов.<br/>

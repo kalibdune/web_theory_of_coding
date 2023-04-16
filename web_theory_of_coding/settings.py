@@ -16,7 +16,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'hamming',
-    'parity'
+    'parity',
+    'reed_solomon'
 ]
 
 MIDDLEWARE = [
