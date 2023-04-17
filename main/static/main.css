@@ -112,8 +112,6 @@ main{
 .aim{
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
-
 
     width: 80%;
     font-size: 1.5em;
@@ -277,6 +275,9 @@ footer a:hover{
 }
 
 @media (min-width: 1380px){
+    .links{
+        padding-bottom: 100px;
+    }
     .btn-5{
         padding: 15px;
     }
