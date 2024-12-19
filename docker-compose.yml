@@ -1,17 +1,15 @@
-version: '3.7'
-
 services:
   web:
     build: .
     command: gunicorn web_theory_of_coding.wsgi:application --workers 3 --bind 0.0.0.0:8000
-    expose: 
-    - "8000"
+    expose:
+      - "8000"
     volumes:
       - static:/static
   nginx:
     build: ./nginx
     ports:
-     - 80:80
+      - 80:80
     volumes:
       - static:/static
 

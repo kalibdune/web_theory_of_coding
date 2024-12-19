@@ -6,5 +6,5 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 COPY . /app
 WORKDIR /app
-RUN python3 manage.py collectstatic
-
+RUN pytest tests.py
+CMD ["python3", "manage.py", "collectstatic"]
